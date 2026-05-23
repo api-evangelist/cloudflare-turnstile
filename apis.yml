@@ -1,0 +1,166 @@
+aid: cloudflare-turnstile
+name: Cloudflare Turnstile
+description: |
+  Cloudflare Turnstile is Cloudflare's free, smart CAPTCHA alternative
+  that verifies real users without sending traffic through Cloudflare's
+  network. It runs non-interactive client-side challenges (proof-of-work,
+  proof-of-space, web API probing, browser-integrity checks) and returns
+  a short-lived token that the relying server validates against the
+  Turnstile siteverify endpoint. Turnstile offers three widget modes —
+  Managed (risk-adapted), Non-interactive (no user gesture), and Invisible
+  (fully hidden) — and is designed to run on any website regardless of
+  whether the site is proxied through Cloudflare. The product is targeted
+  at developers who want a privacy-respecting reCAPTCHA replacement.
+type: Index
+position: Provider
+access: Public
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - CAPTCHA
+  - Bot Defense
+  - Cloudflare
+  - Turnstile
+  - Privacy
+  - reCAPTCHA Alternative
+  - Edge Security
+url: https://raw.githubusercontent.com/api-evangelist/cloudflare-turnstile/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.20'
+apis:
+  - aid: cloudflare-turnstile:siteverify
+    name: Turnstile Siteverify API
+    description: |
+      The Turnstile siteverify endpoint accepts a token produced by the
+      browser widget along with the site's secret key and an optional
+      remote IP and idempotency key, and returns a JSON verdict with
+      success, hostname, action, cdata, and any error codes. This is the
+      canonical server-side check that authorizes a form submission or
+      API call protected by Turnstile.
+    humanURL: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
+    baseURL: https://challenges.cloudflare.com/turnstile/v0/siteverify
+    tags:
+      - Siteverify
+      - Server-Side
+      - Token Verification
+    properties:
+      - type: Documentation
+        url: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
+      - type: APIReference
+        url: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
+      - type: EndpointURL
+        url: https://challenges.cloudflare.com/turnstile/v0/siteverify
+  - aid: cloudflare-turnstile:client-widget
+    name: Turnstile Client Widget
+    description: |
+      The Turnstile client widget renders the challenge in the browser.
+      It is loaded via a script tag at challenges.cloudflare.com/turnstile/v0/api.js
+      and configured with a sitekey, optional theme, action, cdata, and
+      callback functions. Widgets can be Managed, Non-interactive, or
+      Invisible.
+    humanURL: https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/
+    baseURL: https://challenges.cloudflare.com/turnstile/v0/api.js
+    tags:
+      - JavaScript
+      - Widget
+      - Frontend
+      - Managed
+      - Invisible
+    properties:
+      - type: Documentation
+        url: https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/
+      - type: ScriptURL
+        url: https://challenges.cloudflare.com/turnstile/v0/api.js
+      - type: Examples
+        url: https://github.com/cloudflare/turnstile-demo-workers
+  - aid: cloudflare-turnstile:pre-clearance
+    name: Turnstile Pre-Clearance
+    description: |
+      Pre-clearance lets a successful Turnstile challenge set a cookie
+      that Cloudflare-proxied properties can honor to skip subsequent
+      bot challenges for the same visitor, which is useful for single-page
+      applications and API-heavy flows.
+    humanURL: https://developers.cloudflare.com/turnstile/concepts/pre-clearance-support/
+    baseURL: https://challenges.cloudflare.com/turnstile/v0/api.js
+    tags:
+      - Pre-Clearance
+      - Cookies
+      - SPA
+    properties:
+      - type: Documentation
+        url: https://developers.cloudflare.com/turnstile/concepts/pre-clearance-support/
+  - aid: cloudflare-turnstile:management-api
+    name: Cloudflare Turnstile Management API
+    description: |
+      Turnstile widgets and analytics are managed through the broader
+      Cloudflare API, which exposes endpoints to list, create, update,
+      and rotate Turnstile sitekeys, retrieve analytics, and integrate
+      with account-level settings.
+    humanURL: https://developers.cloudflare.com/api/operations/challenges-widget-list-challenge-widgets
+    baseURL: https://api.cloudflare.com/client/v4
+    tags:
+      - Management
+      - Provisioning
+      - Analytics
+    properties:
+      - type: Documentation
+        url: https://developers.cloudflare.com/turnstile/reference/
+      - type: APIReference
+        url: https://developers.cloudflare.com/api/operations/challenges-widget-list-challenge-widgets
+features:
+  - name: Free At Any Scale
+    description: Turnstile is offered at no cost with high request volumes for all customers.
+  - name: Privacy-Respecting
+    description: Designed to minimize PII collection and operate without third-party tracking.
+  - name: Three Widget Modes
+    description: Managed (risk-adapted), Non-interactive (no gesture), and Invisible (hidden) variants.
+  - name: Works Without Cloudflare Proxy
+    description: Sites do not need to be on Cloudflare's network to use Turnstile.
+  - name: Pre-Clearance Integration
+    description: Successful challenges can pre-clear visitors against Cloudflare's bot management on proxied properties.
+  - name: WCAG 2.2 AA Accessibility
+    description: Widget meets WCAG 2.2 AA accessibility standards.
+useCases:
+  - name: reCAPTCHA Replacement
+    description: Drop in as a privacy-friendly replacement for Google reCAPTCHA on signup, login, and forms.
+  - name: Form Protection
+    description: Gate contact, signup, password reset, and checkout forms behind a Turnstile challenge.
+  - name: API Abuse Mitigation
+    description: Require Turnstile tokens before accepting unauthenticated API calls vulnerable to abuse.
+  - name: SPA and Mobile Web Flows
+    description: Use pre-clearance and invisible modes to verify users in JavaScript-heavy applications.
+  - name: AI Scraper Defense
+    description: Add challenge gates to high-value public pages targeted by automated scraping.
+integrations:
+  - name: Cloudflare Workers
+  - name: Cloudflare Pages
+  - name: Next.js
+  - name: React
+  - name: Vue
+  - name: WordPress
+  - name: Laravel
+authentication:
+  - type: SiteKey
+    description: Public site key embedded in the client widget identifies the Turnstile sitekey/property.
+  - type: SecretKey
+    description: Secret key used server-side to call /siteverify and validate response tokens.
+common:
+  - type: ProductPage
+    url: https://www.cloudflare.com/products/turnstile/
+  - type: Documentation
+    url: https://developers.cloudflare.com/turnstile/
+  - type: APIReference
+    url: https://developers.cloudflare.com/turnstile/reference/
+  - type: Dashboard
+    url: https://dash.cloudflare.com/?to=/:account/turnstile
+  - type: Blog
+    url: https://blog.cloudflare.com/turnstile-private-captcha-alternative/
+  - type: GitHubOrganization
+    url: https://github.com/cloudflare
+  - type: Demos
+    url: https://github.com/cloudflare/turnstile-demo-workers
+  - type: Pricing
+    url: https://developers.cloudflare.com/turnstile/community/limits-and-pricing/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
