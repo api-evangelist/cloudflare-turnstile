@@ -161,6 +161,8 @@ common:
     url: https://github.com/cloudflare/turnstile-demo-workers
   - type: Pricing
     url: https://developers.cloudflare.com/turnstile/community/limits-and-pricing/
+  - type: LLMsTxt
+    url: https://developers.cloudflare.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
