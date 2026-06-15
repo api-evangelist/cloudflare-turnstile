@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Cloudflare Turnstile Siteverify API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Verification",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Verify a Turnstile token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Verify a Turnstile token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

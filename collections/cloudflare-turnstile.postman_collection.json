@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "12158c43-5e88-4361-ac42-c25928295a8b",
+      "name": "Verification",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e47ef08-1fdf-4f05-aa12-a977cd42dcae",
+          "name": "Verify a Turnstile token",
+          "request": {
+            "name": "Verify a Turnstile token",
+            "description": {},
+            "url": {
+              "path": [
+                "turnstile",
+                "v0",
+                "siteverify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "secret",
+                  "value": "<string>",
+                  "description": "(Required) Turnstile secret key from the Cloudflare dashboard."
+                },
+                {
+                  "disabled": false,
+                  "key": "response",
+                  "value": "<string>",
+                  "description": "(Required) Token returned by the client-side Turnstile widget."
+                },
+                {
+                  "disabled": false,
+                  "key": "remoteip",
+                  "value": "<string>",
+                  "description": "Visitor IP address (optional)."
+                },
+                {
+                  "disabled": false,
+                  "key": "idempotency_key",
+                  "value": "<uuid>",
+                  "description": "UUID to safely retry validation requests."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "eabcbd7c-2203-4ff8-827b-25852193b75e",
+              "name": "Verification verdict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "turnstile",
+                    "v0",
+                    "siteverify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Turnstile secret key from the Cloudflare dashboard.",
+                        "type": "text/plain"
+                      },
+                      "key": "secret",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Token returned by the client-side Turnstile widget.",
+                        "type": "text/plain"
+                      },
+                      "key": "response",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Visitor IP address (optional).",
+                        "type": "text/plain"
+                      },
+                      "key": "remoteip",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "UUID to safely retry validation requests.",
+                        "type": "text/plain"
+                      },
+                      "key": "idempotency_key",
+                      "value": "<uuid>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"challenge_ts\": \"1953-06-13T15:25:23.175Z\",\n  \"hostname\": \"string\",\n  \"action\": \"string\",\n  \"cdata\": \"string\",\n  \"error-codes\": [\n    \"missing-input-secret\",\n    \"timeout-or-duplicate\"\n  ],\n  \"metadata\": {\n    \"ephemeral_id\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://challenges.cloudflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f8242191-f039-4e49-9de2-adaebc255c1f",
+    "name": "Cloudflare Turnstile Siteverify API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Server-side validation endpoint for Cloudflare Turnstile. The server\nsubmits the widget-issued token together with the site's secret key to\nthe siteverify endpoint and receives a JSON verdict containing success,\nchallenge timestamp, hostname, action, cdata, and any error codes.\n\n\nContact Support:\n Name: Cloudflare Turnstile",
+      "type": "text/plain"
+    }
+  }
+}
