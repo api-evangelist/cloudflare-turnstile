@@ -2,17 +2,17 @@
   "repo": "cloudflare-turnstile",
   "feeds": [
     {
-      "source": "https://blog.cloudflare.com/turnstile-private-captcha-alternative/",
-      "feed_url": "https://blog.cloudflare.com/turnstile-private-captcha-alternative/rss/",
+      "source": "https://blog.cloudflare.com/rss/",
+      "feed_url": "https://blog.cloudflare.com/rss/",
       "title": "",
       "saved": 4,
-      "method": "discovered"
+      "method": "feed"
     },
     {
       "source": "https://dash.cloudflare.com/?to=/:account/turnstile",
       "error": "HTTPError"
     }
   ],
-  "post_count": 4,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 14,
+  "fetched": "2026-06-27T12:03:07Z"
 }
