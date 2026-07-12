@@ -145,6 +145,10 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to call /siteverify and validate response tokens.
 common:
+  - type: VulnerabilityDisclosure
+    url: security/cloudflare-turnstile-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/cloudflare-turnstile-domain-security.yml
   - type: ProductPage
     url: https://www.cloudflare.com/products/turnstile/
   - type: Documentation
