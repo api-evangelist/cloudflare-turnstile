@@ -145,6 +145,8 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to call /siteverify and validate response tokens.
 common:
+  - type: AgenticAccess
+    url: agentic-access/cloudflare-turnstile-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/cloudflare-turnstile-vulnerability-disclosure.yml
   - type: DomainSecurity
