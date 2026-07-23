@@ -1,30 +1,39 @@
 openapi: 3.1.0
 info:
-  title: Cloudflare Turnstile Siteverify API
-  description: |
-    Server-side validation endpoint for Cloudflare Turnstile. The server
-    submits the widget-issued token together with the site's secret key to
+  title: Cloudflare Turnstile Siteverify Verification API
+  description: 'Server-side validation endpoint for Cloudflare Turnstile. The server
+
+    submits the widget-issued token together with the site''s secret key to
+
     the siteverify endpoint and receives a JSON verdict containing success,
+
     challenge timestamp, hostname, action, cdata, and any error codes.
+
+    '
   version: '1.0'
   contact:
     name: Cloudflare Turnstile
     url: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
 servers:
-  - url: https://challenges.cloudflare.com
+- url: https://challenges.cloudflare.com
+tags:
+- name: Verification
 paths:
   /turnstile/v0/siteverify:
     post:
       summary: Verify a Turnstile token
       operationId: siteverify
-      tags: [Verification]
+      tags:
+      - Verification
       requestBody:
         required: true
         content:
           application/x-www-form-urlencoded:
             schema:
               type: object
-              required: [secret, response]
+              required:
+              - secret
+              - response
               properties:
                 secret:
                   type: string
@@ -53,12 +62,19 @@ components:
   schemas:
     SiteverifyRequest:
       type: object
-      required: [secret, response]
+      required:
+      - secret
+      - response
       properties:
-        secret: { type: string }
-        response: { type: string }
-        remoteip: { type: string }
-        idempotency_key: { type: string, format: uuid }
+        secret:
+          type: string
+        response:
+          type: string
+        remoteip:
+          type: string
+        idempotency_key:
+          type: string
+          format: uuid
     SiteverifyResponse:
       type: object
       properties:
@@ -78,13 +94,13 @@ components:
           items:
             type: string
             enum:
-              - missing-input-secret
-              - invalid-input-secret
-              - missing-input-response
-              - invalid-input-response
-              - bad-request
-              - timeout-or-duplicate
-              - internal-error
+            - missing-input-secret
+            - invalid-input-secret
+            - missing-input-response
+            - invalid-input-response
+            - bad-request
+            - timeout-or-duplicate
+            - internal-error
         metadata:
           type: object
           properties:
