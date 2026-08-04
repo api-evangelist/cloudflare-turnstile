@@ -1,0 +1,14 @@
+{
+  "provider": "cloudflare-turnstile",
+  "sources": [
+    "cloudflare-turnstile-verification-api-openapi.yml"
+  ],
+  "outputs": [
+    "cloudflare-turnstile-verification-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
