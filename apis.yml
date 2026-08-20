@@ -109,6 +109,10 @@ apis:
   tags:
   - Pre-Clearance
   - Cookies
+  - Spa
+  tags_raw:
+  - Pre-Clearance
+  - Cookies
   - SPA
   properties:
   - type: Documentation
