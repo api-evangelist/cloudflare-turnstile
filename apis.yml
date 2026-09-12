@@ -200,6 +200,8 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to call /siteverify and validate response tokens.
 common:
+  - type: Website
+    url: https://www.cloudflare.com/
   - type: AgenticAccess
     url: agentic-access/cloudflare-turnstile-agentic-access.yml
   - type: VulnerabilityDisclosure
