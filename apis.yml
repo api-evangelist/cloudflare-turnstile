@@ -95,6 +95,12 @@ apis:
   baseURL: https://challenges.cloudflare.com/turnstile/v0/api.js
   tags:
   - JavaScript
+  - Widgets
+  - Frontend
+  - Managed
+  - Invisible
+  tags_raw:
+  - JavaScript
   - Widget
   - Frontend
   - Managed
