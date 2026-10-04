@@ -1,0 +1,26 @@
+slug: cloudflare-turnstile
+provider: Cloudflare Turnstile
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Verification
+  spec_file: cloudflare-turnstile-verification-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.7
+  evidence: '"POST /turnstile/v0/siteverify  Verify a Turnstile token" — "smart CAPTCHA alternative that
+    verifies real users", "returns a short-lived token that the relying server validates"'
+  reason: Server-side validation of a bot-detection challenge token. This is an application security control
+    (bot/abuse prevention), so Cybersecurity Management at L1. It is not identity/access provisioning
+    nor SOC incident response, so no L2 is asserted.

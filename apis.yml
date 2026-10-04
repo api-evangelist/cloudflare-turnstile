@@ -206,6 +206,9 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to call /siteverify and validate response tokens.
 common:
+  - type: CapabilityMap
+    url: capabilities/cloudflare-turnstile-capability-edges.yml
+    name: Cloudflare Turnstile Business Capability Map
   - type: Website
     url: https://www.cloudflare.com/
   - type: AgenticAccess
