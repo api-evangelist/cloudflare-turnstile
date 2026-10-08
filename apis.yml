@@ -206,6 +206,12 @@ authentication:
   - type: SecretKey
     description: Secret key used server-side to call /siteverify and validate response tokens.
 common:
+  - type: Plans
+    url: plans/cloudflare-turnstile-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cloudflare-turnstile-rate-limits.yml
+  - type: FinOps
+    url: finops/cloudflare-turnstile-finops.yml
   - type: CapabilityMap
     url: capabilities/cloudflare-turnstile-capability-edges.yml
     name: Cloudflare Turnstile Business Capability Map
