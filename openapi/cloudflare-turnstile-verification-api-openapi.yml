@@ -58,21 +58,6 @@ paths:
                 $ref: '#/components/schemas/SiteverifyResponse'
 components:
   schemas:
-    SiteverifyRequest:
-      type: object
-      required:
-      - secret
-      - response
-      properties:
-        secret:
-          type: string
-        response:
-          type: string
-        remoteip:
-          type: string
-        idempotency_key:
-          type: string
-          format: uuid
     SiteverifyResponse:
       type: object
       properties:
@@ -105,3 +90,18 @@ components:
             ephemeral_id:
               type: string
               description: Enterprise-only device fingerprint identifier.
+    SiteverifyRequest:
+      type: object
+      required:
+      - secret
+      - response
+      properties:
+        secret:
+          type: string
+        response:
+          type: string
+        remoteip:
+          type: string
+        idempotency_key:
+          type: string
+          format: uuid
