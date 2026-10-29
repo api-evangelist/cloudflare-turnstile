@@ -1,4 +1,4 @@
-# Cloudflare Turnstile (cloudflare-turnstile)
+# Cloudflare Turnstile
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,153 +64,124 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cloudflare Turnstile is Cloudflare's free, smart CAPTCHA alternative
-that verifies real users without sending traffic through Cloudflare's
-network. It runs non-interactive client-side challenges (proof-of-work,
-proof-of-space, web API probing, browser-integrity checks) and returns
-a short-lived token that the relying server validates against the
-Turnstile siteverify endpoint. Turnstile offers three widget modes —
-Managed (risk-adapted), Non-interactive (no user gesture), and Invisible
-(fully hidden) — and is designed to run on any website regardless of
-whether the site is proxied through Cloudflare. The product is targeted
-at developers who want a privacy-respecting reCAPTCHA replacement.
+Cloudflare Turnstile is Cloudflare's free, smart CAPTCHA alternative that verifies real users without sending traffic through Cloudflare's network. It runs non-interactive client-side challenges (proof-of-work, proof-of-space, web API probing, browser-integrity checks) and returns a short-lived token that the relying server validates against the Turnstile siteverify endpoint. Turnstile offers three widget modes — Managed (risk-adapted), Non-interactive (no user gesture), and Invisible (fully hidden) — and is designed to run on any website regardless of whether the site is proxied through Cloudflare. The product is targeted at developers who want a privacy-respecting reCAPTCHA replacement.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/cloudflare-turnstile/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/cloudflare-turnstile/refs/heads/main/apis.yml)
+**Areas:** CAPTCHA · Bot Defense · Cloudflare · Turnstile · Privacy · reCAPTCHA Alternative · Edge Security
 
-## Scope
+## Cloudflare Turnstile on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** Public
+Everything profiled for Cloudflare Turnstile is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cloudflare-turnstile/](https://apis.io/providers/cloudflare-turnstile/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- CAPTCHA
-- Bot Defense
-- Cloudflare
-- Turnstile
-- Privacy
-- reCAPTCHA Alternative
-- Edge Security
+- [Turnstile Siteverify API](https://apis.io/apis/cloudflare-turnstile/siteverify/) — The Turnstile siteverify endpoint accepts a token produced by the browser widget along with the site's secret key and an optional remote IP and idempotency…
+- [Turnstile Client Widget](https://apis.io/apis/cloudflare-turnstile/client-widget/) — The Turnstile client widget renders the challenge in the browser. It is loaded via a script tag at challenges.cloudflare.com/turnstile/v0/api.js and…
+- [Turnstile Pre-Clearance](https://apis.io/apis/cloudflare-turnstile/pre-clearance/) — Pre-clearance lets a successful Turnstile challenge set a cookie that Cloudflare-proxied properties can honor to skip subsequent bot challenges for the same…
+- [Cloudflare Turnstile Management API](https://apis.io/apis/cloudflare-turnstile/management-api/) — Turnstile widgets and analytics are managed through the broader Cloudflare API, which exposes endpoints to list, create, update, and rotate Turnstile…
+- [Cloudflare Turnstile Verification API](https://apis.io/apis/cloudflare-turnstile/cloudflare-turnstile-verification-api/) — The Verification API from Cloudflare Turnstile — 1 operation(s) for verification.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Turnstile Siteverify API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Turnstile siteverify endpoint accepts a token produced by the
-browser widget along with the site's secret key and an optional
-remote IP and idempotency key, and returns a JSON verdict with
-success, hostname, action, cdata, and any error codes. This is the
-canonical server-side check that authorizes a form submission or
-API call protected by Turnstile.
+- [Cloudflare Turnstile Agentic Access](https://apis.io/agentic-access/cloudflare-turnstile/cloudflare-turnstile-agentic-access/)
 
-- **Human URL:** [https://developers.cloudflare.com/turnstile/get-started/server-side-validation/](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/)
-- **Base URL:** `https://challenges.cloudflare.com/turnstile/v0/siteverify`
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Siteverify
-- Server-Side
-- Token Verification
+- [Cloudflare Turnstile Siteverify API](https://apis.io/collections/cloudflare-turnstile/open-cloudflare-turnstile/)
+- [Cloudflare Turnstile Siteverify Verification API](https://apis.io/collections/cloudflare-turnstile/open-cloudflare-turnstile-verification-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/)
-- [API Reference](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/)
-- [Endpoint U R L](https://challenges.cloudflare.com/turnstile/v0/siteverify)
-- [Postman Collection](collections/cloudflare-turnstile.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-turnstile.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Turnstile Client Widget
+- [Cloudflare Turnstile Domain Security](https://apis.io/security/cloudflare-turnstile/cloudflare-turnstile-domain-security/)
+- [Cloudflare Turnstile Vulnerability Disclosure](https://apis.io/security/cloudflare-turnstile/cloudflare-turnstile-vulnerability-disclosure/)
 
-The Turnstile client widget renders the challenge in the browser.
-It is loaded via a script tag at challenges.cloudflare.com/turnstile/v0/api.js
-and configured with a sitekey, optional theme, action, cdata, and
-callback functions. Widgets can be Managed, Non-interactive, or
-Invisible.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/)
-- **Base URL:** `https://challenges.cloudflare.com/turnstile/v0/api.js`
+Published plans, tiers and prices.
 
-#### Tags
+- [Cloudflare Turnstile Plans Pricing](https://apis.io/plans/cloudflare-turnstile/cloudflare-turnstile-plans-pricing/)
 
-- JavaScript
-- Widget
-- Frontend
-- Managed
-- Invisible
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/)
-- [Script U R L](https://challenges.cloudflare.com/turnstile/v0/api.js)
-- [Examples](https://github.com/cloudflare/turnstile-demo-workers)
-- [Postman Collection](collections/cloudflare-turnstile.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-turnstile.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Cloudflare Turnstile Rate Limits](https://apis.io/rate-limits/cloudflare-turnstile/cloudflare-turnstile-rate-limits/)
 
-### Turnstile Pre-Clearance
+#### FinOps (1)
 
-Pre-clearance lets a successful Turnstile challenge set a cookie
-that Cloudflare-proxied properties can honor to skip subsequent
-bot challenges for the same visitor, which is useful for single-page
-applications and API-heavy flows.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://developers.cloudflare.com/turnstile/concepts/pre-clearance-support/](https://developers.cloudflare.com/turnstile/concepts/pre-clearance-support/)
-- **Base URL:** `https://challenges.cloudflare.com/turnstile/v0/api.js`
+- [Cloudflare Turnstile Finops](https://apis.io/finops/cloudflare-turnstile/cloudflare-turnstile-finops/)
 
-#### Tags
+## Where to find this API
 
-- Pre-Clearance
-- Cookies
-- SPA
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://developers.cloudflare.com/turnstile/concepts/pre-clearance-support/)
-- [Postman Collection](collections/cloudflare-turnstile.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-turnstile.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Cloudflare Turnstile Management API
-
-Turnstile widgets and analytics are managed through the broader
-Cloudflare API, which exposes endpoints to list, create, update,
-and rotate Turnstile sitekeys, retrieve analytics, and integrate
-with account-level settings.
-
-- **Human URL:** [https://developers.cloudflare.com/api/operations/challenges-widget-list-challenge-widgets](https://developers.cloudflare.com/api/operations/challenges-widget-list-challenge-widgets)
-- **Base URL:** `https://api.cloudflare.com/client/v4`
-
-#### Tags
-
-- Management
-- Provisioning
-- Analytics
-
-#### Properties
-
-- [Documentation](https://developers.cloudflare.com/turnstile/reference/)
-- [API Reference](https://developers.cloudflare.com/api/operations/challenges-widget-list-challenge-widgets)
-- [Postman Collection](collections/cloudflare-turnstile.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloudflare-turnstile.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Product Page](https://www.cloudflare.com/products/turnstile/)
+- [Website](https://www.cloudflare.com/)
 - [Documentation](https://developers.cloudflare.com/turnstile/)
-- [API Reference](https://developers.cloudflare.com/turnstile/reference/)
-- [Dashboard](https://dash.cloudflare.com/?to=/:account/turnstile)
-- [Blog](https://blog.cloudflare.com/turnstile-private-captcha-alternative/)
-- [GitHub Organization](https://github.com/cloudflare)
-- [Demos](https://github.com/cloudflare/turnstile-demo-workers)
+- [API reference](https://developers.cloudflare.com/turnstile/reference/)
 - [Pricing](https://developers.cloudflare.com/turnstile/community/limits-and-pricing/)
-- [L L Ms Txt](https://developers.cloudflare.com/llms.txt)
+- [Blog](https://blog.cloudflare.com/turnstile-private-captcha-alternative/)
+- [GitHub](https://github.com/cloudflare)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 44.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 23.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | verified |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cloudflare-turnstile/](https://apis.io/providers/cloudflare-turnstile/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cloudflare Turnstile: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cloudflare-turnstile/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
